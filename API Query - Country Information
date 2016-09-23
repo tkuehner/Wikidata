@@ -1,0 +1,4 @@
+SELECT ?country ?countryLabel ?ISO3166  WHERE {
+  ?country wdt:P297 ?ISO3166.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "pt". }
+}
