@@ -1,0 +1,9 @@
+List of countries
+SELECT ?country ?countryLabel where {
+   ?country wdt:P17 ?country .
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }  }
+
+List of countries with ISO Codes (255)
+SELECT ?country ?countryLabel ?ISO3166  WHERE {
+  ?country wdt:P297 ?ISO3166.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "pt". }}
