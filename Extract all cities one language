@@ -1,0 +1,6 @@
+SELECT ?city ?cityLabel ?country ?countryLabel
+WHERE {
+    ?city wdt:P31/wdt:P279* wd:Q515 .  # find instances of subclasses of city
+    ?city wdt:P17 ?country   # Also find the country of the city
+    SERVICE wikibase:label {        bd:serviceParam wikibase:language "fr" .    }     # choose language
+} 
