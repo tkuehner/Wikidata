@@ -1,0 +1,6 @@
+	SELECT ?city ?cityLabel ?country (lang(?label) AS ?language) ?label
+WHERE {
+    ?city wdt:P31/wdt:P279* wd:Q515 .  # find instances of subclasses of city
+    ?city wdt:P17 ?country   # Also find the country of the city
+    OPTIONAL {   ?city rdfs:label ?label }
+} 
