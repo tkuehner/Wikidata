@@ -4,3 +4,11 @@ WHERE {
     ?city wdt:P17 ?country   # Also find the country of the city
     OPTIONAL {   ?city rdfs:label ?label }
 } 
+
+
+List of cities worldwide with label
+SELECT ?city  ?cityLabel  WHERE {
+?city wdt:P31/wdt:P279* wd:Q515.
+#?city wdt:P17 wd:Q31  .   # alternatively with country info both at the same time takes to long
+?city wdt:P17 ?country.
+SERVICE wikibase:label { bd:serviceParam wikibase:language "es" .       } }
